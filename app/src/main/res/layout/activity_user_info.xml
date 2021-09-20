@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UserInfoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHor40"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHor20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.22"/>
+
+        <ImageView
+            android:id="@+id/userBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@color/black_main"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineHor40"/>
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageButton
+                android:id="@+id/buttonBack"
+                android:layout_width="35dp"
+                android:background="@android:color/transparent"
+                android:layout_height="30dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_back_button_white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_gravity = "center"
+                android:text="Profile"
+                android:textSize="@dimen/text_menu_size"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userAva"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="6dp"
+            android:src="@color/gray_main"
+            android:transitionName="userProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHor20"/>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_header_size"
+            android:layout_margin="10dp"
+            android:textColor="@color/blue_main"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:text="User name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userAva"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_small_size"
+            android:layout_margin="10dp"
+            android:textColor="@color/blue_main"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHor50"
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            android:background="@color/gray_line"
+            android:layout_marginHorizontal="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guidelineHor50"/>
+
+        <TextView
+            android:id="@+id/numberFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_header_size"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/blue_main"
+            android:text="3777"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHor50"/>
+
+        <TextView
+            android:id="@+id/textFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal_size"
+            android:textColor="@color/blue_main"
+            android:text="Following"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/numberFollowing"
+            app:layout_constraintEnd_toEndOf="@id/numberFollowing"
+            app:layout_constraintTop_toBottomOf="@id/numberFollowing"/>
+
+         <TextView
+            android:id="@+id/textNumberFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textSize="@dimen/text_header_size"
+             android:textColor="@color/blue_main"
+             android:text="3777"
+             android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/numberFollowing"
+            app:layout_constraintTop_toTopOf="@id/numberFollowing"/>
+
+        <TextView
+            android:id="@+id/textFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textSize="@dimen/text_normal_size"
+             android:textColor="@color/blue_main"
+             android:text="Followers"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textNumberFollower"
+            app:layout_constraintEnd_toEndOf="@id/textNumberFollower"
+            app:layout_constraintTop_toBottomOf="@id/textNumberFollower"/>
+
+         <TextView
+            android:id="@+id/textNumberRepos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textSize="@dimen/text_header_size"
+             android:textColor="@color/blue_main"
+             android:text="3777"
+             android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/numberFollowing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/numberFollowing"/>
+
+        <TextView
+            android:id="@+id/textRepos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textSize="@dimen/text_normal_size"
+             android:textColor="@color/blue_main"
+             android:text="Repos"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textNumberRepos"
+            app:layout_constraintEnd_toEndOf="@id/textNumberRepos"
+            app:layout_constraintTop_toBottomOf="@id/textNumberRepos"/>
+
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="0dp"
+            android:layout_height="0.7dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/gray_line"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textFollowing"/>
+
+        <TextView
+            android:id="@+id/textBio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_main"
+            android:textSize="@dimen/text_small_size"
+            android:textStyle="bold"
+            android:text="Bio"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/line2"
+            app:layout_constraintStart_toStartOf="@id/line2"/>
+
+        <TextView
+            android:id="@+id/textUserBio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_main"
+            android:textSize="@dimen/text_small_size"
+            android:text="User bio here"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textBio"
+            app:layout_constraintStart_toStartOf="@id/line2"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
